@@ -8,7 +8,8 @@ from .models import Question, Result, Attempt
 
 
 def home(request):
-    context = {}
+    high_score = Result.objects.all().order_by('-score', '-time_taken').first()
+    context = {'high_score': high_score}
     return render(request, 'quiz/home.html', context)
 
 

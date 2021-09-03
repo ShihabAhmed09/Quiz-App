@@ -16,6 +16,16 @@
                             <br>Rather you concentrate on adding more difficult questions and check others results!!!!
                         </p>
                     {% else %}
+                        <div align="right">
+                            <p class="fs-4 me-4">
+                                {% if high_score %}
+                                    <strong>Current High Score: {{ high_score.user }} -
+                                        {{ high_score.percentage|floatformat:2 }}%</strong>
+                                {% else %}
+                                    <strong>Current High Score: No one participated</strong>
+                                {% endif %}
+                            </p>
+                        </div>
                         <p class="fs-4 mb-4">Ready for the quiz?<br><br>
                             Remember you can only attempt <strong>3 times</strong>. If you click
                             <strong>Start Quiz</strong> button, it will be count as <strong>1 time</strong>. So be sure
